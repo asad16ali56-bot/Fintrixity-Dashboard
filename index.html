@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fintrixity Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay" id="overlay"></div>
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo"><i class="fa-solid fa-bolt"></i> Fintrixity</div>
+
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="gsearch" data-in="gsearch" placeholder="Search" autocomplete="off">
+      <span class="kbd">Ctrl K</span>
+      <div class="search-res" id="searchRes"></div>
+    </div>
+
+    <ul class="nav" id="nav">
+      <li><a href="#/dashboard" data-route="dashboard"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a></li>
+      <li><a href="#/analytics" data-route="analytics"><i class="fa-solid fa-chart-line"></i> Analytics <span class="badge" id="bAnalytics">0</span></a></li>
+      <li><a href="#/transactions" data-route="transactions"><i class="fa-regular fa-credit-card"></i> Transactions</a></li>
+      <li><a href="#/invoices" data-route="invoices"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+    </ul>
+    <div class="nav-title">FEATURES</div>
+    <ul class="nav" id="nav2">
+      <li><a href="#/recurring" data-route="recurring"><i class="fa-solid fa-rotate"></i> Recurring <span class="badge dark" id="bRecurring">0</span></a></li>
+      <li><a href="#/subscriptions" data-route="subscriptions"><i class="fa-solid fa-layer-group"></i> Subscriptions</a></li>
+      <li><a href="#/feedback" data-route="feedback"><i class="fa-regular fa-comment-dots"></i> Feedback</a></li>
+    </ul>
+
+    <div class="upgrade" id="upgradeBox"></div>
+  </aside>
+
+  <!-- Main -->
+  <section class="main">
+    <div class="topbar">
+      <div class="icon-btn menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+      <button class="icon-btn hide-sm" data-act="navBack" title="Back"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="icon-btn hide-sm" data-act="navFwd" title="Forward"><i class="fa-solid fa-arrow-right"></i></button>
+      <div class="crumb hide-sm">Fintrixity &nbsp;›&nbsp; <b id="crumb">Dashboard</b></div>
+      <div class="top-right">
+        <button class="icon-btn hide-sm" data-act="help" title="Help"><i class="fa-regular fa-circle-question"></i></button>
+        <button class="icon-btn hide-sm" data-act="goFeedback" title="Messages"><i class="fa-regular fa-envelope"></i></button>
+        <button class="icon-btn" data-act="bell" title="Notifications"><i class="fa-regular fa-bell"></i><span class="dot-badge" id="bellDot"></span></button>
+        <button class="avatar" data-act="profileMenu" id="avatar" title="Profile">U</button>
+        <button class="btn primary share-btn" data-act="share"><span class="share-txt">Share </span><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <div class="content" id="view"></div>
+  </section>
+</div>
+
+<div id="menuRoot"></div>
+<div id="modalRoot"></div>
+<div id="toasts"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
